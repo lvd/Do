@@ -39,9 +39,9 @@ Do.elem('p', { html: "<strong>Hello</strong> <em>everybody</em>" });
 // or
 Do.elem('div', {
     children: [
-        Do.elem('strong', {text: "Hello"}, 
-        document.createTextNode("Hello World"), 
-        Do.elem('em', {text: "everybody"}
+        Do.elem('strong', {text: "Hello"}), 
+        document.createTextNode(" "), 
+        Do.elem('em', {text: "everybody"})
     ] 
 });
 ```
