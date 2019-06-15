@@ -6,15 +6,30 @@ Super small js library (one method) to easily create DOM elements. Vanilla savor
 
 Do.elem(*tag*, *options*);
 
-* tag : string, tag name of created element, mandatory
-* options : array of properties for created element, optional
+* **tag** : string, tag name for created element, mandatory
+* **options** : array of properties for created element, optional, processed in this order
+    * **id**: string, id for element
+    * **html**: string, *innerHTML* for element
+    * **text**: *textNode* for element (added after innerHTML)
+    * **attributes**: array of arrays representing attributes, added with *setAttribute*
+        * **0**: attribute name, string
+        * **1**: attribute value, string
+    * **events**: array of objects representing events, added with *addEventListener*
+        * **name**: name of event
+        * **callback**: function called when event is triggered
+        * **bindObject**: bound object for callback, default is created element
+        * **params**: parameters for callback
+    * **htmlClasses**: array of classNames (string) for created element (added with *classList.add*)
+    * **style**: css rules (string) used as style attribute for created element
+    * **children**: array of DOM elements to appendChild to element, added with *appendChild* (added after innerHTML and textNode)
+    * **parent**: DOM element used as parent for created element (created element added with *appendChild*)
+        
 
 *Examples *
 ------------
 
 ```javascript
 // Create <div>Hello</div>
-
 Do.elem('div', { text: "Hello" });
 ```
 ```javascript
