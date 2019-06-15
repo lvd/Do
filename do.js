@@ -13,11 +13,11 @@ class Do {
         if ('attributes' in options) for (const attr of options.attributes) el.setAttribute(attr[0], attr[1]);
         if ('events' in options) {
             for (const event of options.events) {
-                const bindingParams = [];
-                const bindParams = (('bindObject' in event) ? event.bindObject : el);
-                bindParams.push(bindParams);
-                if ('params' in event) bindingParams.push(...event.params);
-                el.addEventListener(event.name, event.callback.bind(...bindingParams));
+                const bindParams = [];
+                const bindObject = (('bindObject' in event) ? event.bindObject : el);
+                bindParams.push(bindObject);
+                if ('params' in event) bindParams.push(...event.params);
+                el.addEventListener(event.name, event.callback.bind(...bindParams));
             } 
         }
         if ('htmlClasses' in options) for (const className of options.htmlClasses) el.classList.add(className);
