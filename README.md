@@ -1,15 +1,24 @@
 # Do
-Super small js library to easily create DOM elements
+Super small js library to easily create DOM elements.
 
-Examples :
+*Method*
 
+Do.elem(*tag*, *options*);
+
+* tag : string, tag name of created element, mandatory
+* options : array of properties for created element, optional
+
+*Examples :*
+
+```javascript
 // Create <div>Hello</div>
 Do.elem('div', { text: "Hello" });
+```
 
-// Create <div><strong>Hello</strong></div>
-Do.elem('div', { html: "<strong>Hello</strong>" });
-// or
-Do.elem('div', { children: [Do.elem('strong', {text: "Hello"}] });
+    // Create <div><strong>Hello</strong></div>
+    Do.elem('div', { html: "<strong>Hello</strong>" });
+    // or
+    Do.elem('div', { children: [Do.elem('strong', {text: "Hello"}] });
 
 
 // button
