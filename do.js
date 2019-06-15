@@ -1,4 +1,6 @@
-// v1.0
+"use strict";
+
+// v1.0.1
 
 class Do {
 
@@ -10,13 +12,13 @@ class Do {
         if ('style' in options) el.setAttribute('style', options.style);
         if ('parent' in options) options.parent.appendChild(el);
         if ('children' in options) for (const enfant of options.children) el.appendChild(enfant);
-        if ('classNames' in options) for (const classe of options.classNames) el.classList.add(classe);
+        if ('htmlClasses' in options) for (const className of options.htmlClasses) el.classList.add(className);
         if ('attributes' in options) for (const attr of options.attributes) el.setAttribute(attr[0], attr[1]);
         if ('events' in options) {
             for (const event of options.events) {
                 const bindingParams = [];
-                const bindingObject = (('bindElement' in event) ? event.bindingObject : el);
-                bindingParams.push(bindingElement);
+                const bindParams = (('bindObject' in event) ? event.bindObject : el);
+                bindParams.push(bindingElement);
                 if ('params' in event) bindingParams.push(...event.params);
                 el.addEventListener(event.name, event.callback.bind(...bindingParams));
             }
