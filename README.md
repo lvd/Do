@@ -63,11 +63,11 @@ const button = Do.elem('button', {
 
 ```javascript
 //imput 
-Createur.elem('input', {             
+Do.elem('input', {             
     id: 'age',
     attributes: [
         ['type', 'number'],
-        ['name': 'age' ],
+        ['name', 'age' ],
         ['min', '18'], 
         ['step', '1'], 
         ['placeholder', 'Fill me with yout age!']        
