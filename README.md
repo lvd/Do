@@ -82,11 +82,13 @@ Createur.elem('input', {
 **First** : copy/paste Do class in console.
 
 ```javascript
+// set "hello" div in body
 document.body.innerHTML = "";
 Do.elem('div', { text: "Hello", parent: document.body });
 ```
 
 ```javascript
+// set "hello" button in body
 document.body.innerHTML = "";
 Do.elem('button', {                       
     text : 'Say hello',
@@ -99,6 +101,7 @@ Do.elem('button', {
 ```
 
 ```javascript
+// set "hello" button in body using an Example class
 document.body.innerHTML = "";
 
 class Example {
