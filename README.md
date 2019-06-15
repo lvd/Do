@@ -1,5 +1,5 @@
 # Do
-Super small js library to easily create DOM elements.
+Super small js library (one method) to easily create DOM elements. Vanilla savor.
 
 *Method*
 --------
