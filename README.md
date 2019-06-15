@@ -137,3 +137,4 @@ new Example(document.body, "DoName", "Click me");
 
 It would be nice to improve Do. (More interesting options. Code optimization.)
 It would be nice to benchmark Do. (Compare Do versus full document.createElement etc... code.)
+Could be minified.
