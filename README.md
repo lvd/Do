@@ -1,5 +1,5 @@
 # Do
-Super small js library (one method) to easily create DOM elements. Vanilla savor.
+Super small js library (one class, one static method) to easily create DOM elements. Vanilla savor.
 
 *Method*
 --------
@@ -25,7 +25,7 @@ Do.elem(*tag*, *options*);
     * **parent**: DOM element used as parent for created element (created element added with *appendChild*)
         
 
-*Examples *
+*Examples*
 ------------
 
 ```javascript
@@ -74,6 +74,58 @@ Createur.elem('input', {
     ],
     parent: someForm 
 });
+```
+
+*Examples directly working in browser console*
+------------
+
+**First** : copy/paste Do class in console.
+
+```javascript
+document.body.innerHTML = "";
+Do.elem('div', { text: "Hello", parent: document.body });
+```
+
+```javascript
+document.body.innerHTML = "";
+Do.elem('button', {                       
+    text : 'Say hello',
+    parent: document.body,
+    events: [{
+        name: 'click', 
+        callback: function() {alert('hello');}
+    }]
+});
+```
+
+```javascript
+document.body.innerHTML = "";
+
+class Example {
+
+   constructor(parent, name, buttonText) {
+      this.text = "Hello";
+      this.name = name;
+      this.button = 
+         Do.elem('button', { 
+            id: "button-01",
+            text: buttonText,
+            parent: parent,
+            events: [{
+              name: 'click', 
+              callback: this.displayMessage,
+              params: [this]
+            }],
+            style: "margin: 10vmin; padding: 5px; width: 20em; background-color: #c9d8c5"
+         });
+    }
+      
+    displayMessage(example) {
+        alert(`${example.text} ${example.name}\n Button id : ${this.id}`);
+    }
+}
+
+new Example(document.body, "DoName", "Click me");
 ```
 
 
