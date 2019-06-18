@@ -1,5 +1,5 @@
 # Do
-Super small js library (one class, one static method) to easily create DOM elements. Vanilla savor.
+Super small js library (one class, one static method) to easily create DOM elements. Easy to write. Easy to read. Vanilla flavor.
 
 *Method*
 --------
