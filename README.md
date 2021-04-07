@@ -58,7 +58,7 @@ const button = Do.elem('button', {
         callback: this.send, 
         params: [this]
     }],
-    classNames: ['beautifulButton'],
+    htmlClasses: ['beautifulButton'],
     style: 'margin: 10px 20px 10px 5px' 
 });
 ```
